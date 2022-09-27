@@ -19,10 +19,10 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # Notice
 If you upload file on subdirectory on your server, you must edit base tag on index.html and set realpath of file
+it's for root directory like public_html.
 ```html
 <base href="/">
 ```
-this for root directory like public_html.
 But if you upload on public_html/my-dir/sub-dir, you must change base tag to
 ```html
 <base href="/my-dir/sub-dir/">
