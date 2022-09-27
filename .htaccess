@@ -1,0 +1,24 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET,PUT,POST,DELETE"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+
+<Files "error_log">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<Files "messages.json">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<Files "usernames.json">
+  Order Allow,Deny
+  Deny from all
+</Files>
